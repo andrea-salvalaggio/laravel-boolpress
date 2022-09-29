@@ -5,7 +5,7 @@
                 <div class="row justify-content-center">
                     <div class="col-6 mt-5">
                         <div v-if="isLoading" class="loader">
-                            
+                            <h2>Caricamento...</h2>
                         </div>
                         <div v-else class="posts-container">
                             <h1 class="font-weight-bold">Posts</h1>
@@ -52,6 +52,7 @@ export default {
                 this.posts = response.data.results.data;
                 this.currentPage = response.data.results.current_page;
                 this.lastPage = response.data.results.last_page;
+                this.isLoading = false;
             }).catch((error) => {
                 console.log("error");
             });

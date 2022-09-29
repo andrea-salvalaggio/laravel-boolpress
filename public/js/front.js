@@ -2040,6 +2040,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.posts = response.data.results.data;
         _this.currentPage = response.data.results.current_page;
         _this.lastPage = response.data.results.last_page;
+        _this.isLoading = false;
       })["catch"](function (error) {
         console.log("error");
       });
@@ -2417,7 +2418,7 @@ var render = function render() {
     staticClass: "col-6 mt-5"
   }, [_vm.isLoading ? _c("div", {
     staticClass: "loader"
-  }) : _c("div", {
+  }, [_c("h2", [_vm._v("Caricamento...")])]) : _c("div", {
     staticClass: "posts-container"
   }, [_c("h1", {
     staticClass: "font-weight-bold"
