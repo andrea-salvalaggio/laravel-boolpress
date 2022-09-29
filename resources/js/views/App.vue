@@ -1,17 +1,22 @@
 <template>
     <section>
-        <MainComponent/>    
+        <HeaderComponent/>
+        <MainComponent/>
+        
+        <router-view></router-view>    
     </section>
 </template>
 
 <script>
-    import MainComponent from '../components/MainComponent.vue';
+import MainComponent from '../components/MainComponent.vue';
+import HeaderComponent from '../components/HeaderComponent.vue';
 
-    export default {
-        components: {
-            MainComponent
-        }  
-    };
+export default {
+    components: {
+        HeaderComponent,
+        MainComponent
+    }  
+};
 
 </script>
 
