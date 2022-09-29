@@ -4,14 +4,19 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-6 mt-5">
-                        <h1 class="font-weight-bold">Posts</h1>
-                        <hr>
-                        <PostCard v-for="post in posts" :key="post.id" :post="post" class="my-5"/>
+                        <div v-if="isLoading" class="loader">
+                            
+                        </div>
+                        <div v-else class="posts-container">
+                            <h1 class="font-weight-bold">Posts</h1>
+                            <hr>
+                            <PostCard v-for="post in posts" :key="post.id" :post="post" class="my-5"/>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
-        
+
         <FooterComponent/>
     </div>
 </template>
@@ -22,7 +27,7 @@ import FooterComponent from '../components/FooterComponent.vue';
 import axios from 'axios';
 
 export default {
-    name: 'Home',
+    name: 'HomePage',
 
     components: {
         PostCard,

@@ -1908,7 +1908,9 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'FooterComponent'
+});
 
 /***/ }),
 
@@ -2013,7 +2015,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Home',
+  name: 'HomePage',
   components: {
     PostCard: _components_PostCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     FooterComponent: _components_FooterComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
@@ -2065,6 +2067,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'SinglePostPage',
   components: {
     PostCard: _components_PostCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -2412,6 +2415,10 @@ var render = function render() {
     staticClass: "row justify-content-center"
   }, [_c("div", {
     staticClass: "col-6 mt-5"
+  }, [_vm.isLoading ? _c("div", {
+    staticClass: "loader"
+  }) : _c("div", {
+    staticClass: "posts-container"
   }, [_c("h1", {
     staticClass: "font-weight-bold"
   }, [_vm._v("Posts")]), _vm._v(" "), _c("hr"), _vm._v(" "), _vm._l(_vm.posts, function (post) {
@@ -2422,7 +2429,7 @@ var render = function render() {
         post: post
       }
     });
-  })], 2)])])]), _vm._v(" "), _c("FooterComponent")], 1);
+  })], 2)])])])]), _vm._v(" "), _c("FooterComponent")], 1);
 };
 
 var staticRenderFns = [];

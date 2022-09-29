@@ -15,6 +15,7 @@ import PostCard from '../components/PostCard.vue';
 import axios from 'axios';
 
     export default {
+    name: 'SinglePostPage',
     
     components: {
         PostCard,
