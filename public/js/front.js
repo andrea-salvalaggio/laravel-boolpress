@@ -2080,14 +2080,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_PostCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/PostCard.vue */ "./resources/js/components/PostCard.vue");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_MainLoader_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/MainLoader.vue */ "./resources/js/components/MainLoader.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SinglePostPage',
   components: {
-    PostCard: _components_PostCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    PostCard: _components_PostCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    MainLoader: _components_MainLoader_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -2102,9 +2105,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var id = this.$route.params.id;
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/posts/".concat(id)).then(function (response) {
-        // console.log(response.data.results.data)
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/posts/".concat(id)).then(function (response) {
         _this.post = response.data.results.data;
+        _this.isLoading = false;
       })["catch"](function (error) {
         console.log("error");
       });
@@ -2508,7 +2511,7 @@ var render = function render() {
     staticClass: "container"
   }, [_c("div", {
     staticClass: "row justify-content-center"
-  }, [_c("div", {
+  }, [_vm.isLoading ? _c("MainLoader") : _c("div", {
     staticClass: "col-6 mt-5"
   }, [_c("PostCard", {
     key: _vm.post.id,
@@ -2516,7 +2519,7 @@ var render = function render() {
     attrs: {
       post: _vm.post
     }
-  })], 1)])])]);
+  })], 1)], 1)])]);
 };
 
 var staticRenderFns = [];

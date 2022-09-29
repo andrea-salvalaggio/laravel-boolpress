@@ -2,7 +2,8 @@
     <main>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-6 mt-5">
+                <MainLoader v-if="isLoading"/>
+                <div v-else class="col-6 mt-5">
                     <PostCard :key="post.id" :post="post" class="my-5"/>
                 </div>
             </div>
@@ -12,6 +13,7 @@
 
 <script>
 import PostCard from '../components/PostCard.vue';
+import MainLoader from '../components/MainLoader.vue';
 import axios from 'axios';
 
     export default {
@@ -19,6 +21,7 @@ import axios from 'axios';
     
     components: {
         PostCard,
+        MainLoader
     },
 
     data: function () {
@@ -35,8 +38,8 @@ import axios from 'axios';
             const id = this.$route.params.id;
             axios.get(`/api/posts/${id}`)
                 .then((response) => {
-                // console.log(response.data.results.data)
                 this.post = response.data.results.data;
+                this.isLoading = false;
             }).catch((error) => {
                 console.log("error");
             });
