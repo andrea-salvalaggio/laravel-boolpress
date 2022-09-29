@@ -2339,10 +2339,23 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", [_vm._v("\n    Pagina About\n")]);
+  return _vm._m(0);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "row justify-content-center"
+  }, [_c("div", {
+    staticClass: "col-5"
+  }, [_c("div", {
+    staticClass: "text-center text-white bg-dark rounded p-2 mt-5"
+  }, [_c("h1", [_vm._v("This is the About Page")])])])])]);
+}];
 render._withStripped = true;
 
 
