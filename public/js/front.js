@@ -2075,7 +2075,38 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony import */ var _components_PostCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/PostCard.vue */ "./resources/js/components/PostCard.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    PostCard: _components_PostCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      post: {},
+      isLoading: true
+    };
+  },
+  methods: {
+    getPost: function getPost() {
+      var _this = this;
+
+      var id = this.$route.params.id;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/posts/".concat(id)).then(function (response) {
+        // console.log(response.data.results.data)
+        _this.post = response.data.results.data;
+      })["catch"](function (error) {
+        console.log("error");
+      });
+    }
+  },
+  created: function created() {
+    this.getPost();
+  }
+});
 
 /***/ }),
 
@@ -2290,7 +2321,11 @@ var render = function render() {
     staticClass: "card-body"
   }, [_c("h2", {
     staticClass: "font-weight-bold"
-  }, [_vm._v(_vm._s(_vm.post.post_title))]), _vm._v(" "), _c("p", {
+  }, [_c("router-link", {
+    attrs: {
+      to: "posts/" + _vm.post.id
+    }
+  }, [_vm._v(_vm._s(_vm.post.post_title))])], 1), _vm._v(" "), _c("p", {
     staticClass: "card-text"
   }, [_vm._v(_vm._s(_vm.post.post_content))]), _vm._v(" "), _c("p", [_vm._v("Post written by " + _vm._s(_vm.post.user.name) + " | on " + _vm._s(_vm.post.post_date))]), _vm._v(" "), _c("div", {
     staticClass: "d-flex"
@@ -2449,7 +2484,19 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div");
+  return _c("main", [_c("div", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "row justify-content-center"
+  }, [_c("div", {
+    staticClass: "col-6 mt-5"
+  }, [_c("PostCard", {
+    key: _vm.post.id,
+    staticClass: "my-5",
+    attrs: {
+      post: _vm.post
+    }
+  })], 1)])])]);
 };
 
 var staticRenderFns = [];
@@ -18504,7 +18551,7 @@ __webpack_require__.r(__webpack_exports__);
     component: _pages_ContactsPage__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     path: '/posts/:id',
-    name: 'posts.show',
+    name: 'singlePost',
     component: _pages_SinglePostPage__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
 }));

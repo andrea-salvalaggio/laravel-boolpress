@@ -26,7 +26,7 @@ export default new VueRouter({
         },
         {
             path: '/posts/:id',
-            name: 'posts.show',
+            name: 'singlePost',
             component: SinglePostPage
         }
     ]
