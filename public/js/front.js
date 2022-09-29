@@ -2149,7 +2149,7 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("nav", {
-    staticClass: "navbar navbar-expand-lg navbar-light bg-light container"
+    staticClass: "navbar navbar-expand-lg navbar-light bg-light container my-3"
   }, [_c("router-link", {
     staticClass: "navbar-brand font-weight-bold",
     attrs: {
@@ -2161,7 +2161,7 @@ var render = function render() {
       id: "navbarNav"
     }
   }, [_c("ul", {
-    staticClass: "navbar-nav"
+    staticClass: "navbar-nav w-100"
   }, [_c("li", {
     staticClass: "nav-item active"
   }, [_c("router-link", {
@@ -2185,7 +2185,7 @@ var render = function render() {
     attrs: {
       to: "/contacts"
     }
-  }, [_vm._v("Contacts")])], 1)])])], 1);
+  }, [_vm._v("Contacts")])], 1), _vm._v(" "), _vm._m(1)])])], 1);
 };
 
 var staticRenderFns = [function () {
@@ -2205,6 +2205,18 @@ var staticRenderFns = [function () {
   }, [_c("span", {
     staticClass: "navbar-toggler-icon"
   })]);
+}, function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("li", {
+    staticClass: "nav-item ml-auto"
+  }, [_c("a", {
+    staticClass: "btn btn-outline-primary",
+    attrs: {
+      href: "/admin"
+    }
+  }, [_vm._v("Login")])]);
 }];
 render._withStripped = true;
 
