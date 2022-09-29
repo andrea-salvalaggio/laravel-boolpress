@@ -22,7 +22,9 @@ import axios from 'axios';
 
     data: function () {
         return {
-            post: {},
+            post: {
+                user: ''
+            },
             isLoading: true,
         };
     },
