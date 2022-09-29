@@ -5,7 +5,7 @@
                 <div class="row justify-content-center">
                     <div class="col-6 mt-5">
                         <div v-if="isLoading" class="loader">
-                            <h2>Caricamento...</h2>
+                            <MainLoader/>
                         </div>
                         <div v-else class="posts-container">
                             <h1 class="font-weight-bold">Posts</h1>
@@ -24,6 +24,7 @@
 <script>
 import PostCard from '../components/PostCard.vue';
 import FooterComponent from '../components/FooterComponent.vue';
+import MainLoader from '../components/MainLoader.vue';
 import axios from 'axios';
 
 export default {
@@ -31,7 +32,8 @@ export default {
 
     components: {
         PostCard,
-        FooterComponent
+        FooterComponent,
+        MainLoader
     },
     
     data: function () {
@@ -48,7 +50,6 @@ export default {
             axios.get("/api/posts", {
                 page: postsPage
             }).then((response) => {
-                // console.log(response.data.results.data)
                 this.posts = response.data.results.data;
                 this.currentPage = response.data.results.current_page;
                 this.lastPage = response.data.results.last_page;
