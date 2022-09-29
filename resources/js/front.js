@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 
 // Importing App component
 import App from './views/App';
-import router from './router';
+import router from './router.js';
 
 const app = new Vue({
     el: '#root',
