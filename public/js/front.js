@@ -18504,7 +18504,7 @@ __webpack_require__.r(__webpack_exports__);
     component: _pages_ContactsPage__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     path: '/posts/:id',
-    name: 'singlePost',
+    name: 'posts.show',
     component: _pages_SinglePostPage__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
 }));
