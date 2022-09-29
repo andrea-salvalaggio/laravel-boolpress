@@ -24,7 +24,9 @@ export default {
         TagPost,
     },
 
-    props: ['post'],
+    props: {
+        post: Object
+    },
 
 }
 </script>
