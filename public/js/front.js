@@ -2276,12 +2276,19 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div", {
-    staticClass: "loader"
-  });
+  return _vm._m(0);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "loader d-flex justify-content-center align-items-center"
+  }, [_c("div", {
+    staticClass: "load"
+  })]);
+}];
 render._withStripped = true;
 
 
@@ -2554,7 +2561,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.loader[data-v-7d4b2c52] {\n  position: relative;\n  width: 50px;\n  height: 50px;\n  border: 4px solid transparent;\n  border-radius: 50%;\n  border-top: 4px solid red;\n  -webkit-animation: rotate-7d4b2c52 1.5s linear infinite;\n          animation: rotate-7d4b2c52 1.5s linear infinite;\n}\n.loader[data-v-7d4b2c52]::before,\n.loader[data-v-7d4b2c52]::after {\n  position: absolute;\n  content: \"\";\n  border-radius: 50%;\n  box-sizing: border-box;\n  border: 4px solid transparent;\n}\n.loader[data-v-7d4b2c52]::after {\n  inset: 0;\n  border-bottom: 4px solid red;\n  animation: rotate-7d4b2c52 0.5s linear infinite reverse;\n}\n.loader[data-v-7d4b2c52]::before {\n  inset: 4px;\n  border-left: 4px solid red;\n  -webkit-animation: rotate-7d4b2c52 1.5s linear infinite;\n          animation: rotate-7d4b2c52 1.5s linear infinite;\n}\n@-webkit-keyframes rotate-7d4b2c52 {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n@keyframes rotate-7d4b2c52 {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n\n", ""]);
+exports.push([module.i, "\n.load[data-v-7d4b2c52]{\n    width: 140px;\n    height: 140px;\n    border-radius: 50%;\n    border: 15px solid transparent;\n    border-top: 15px solid rgb(0, 13, 255);\n    border-bottom: 15px solid rgb(0, 13, 255);\n    -webkit-animation: rotate-7d4b2c52 1s linear infinite;\n            animation: rotate-7d4b2c52 1s linear infinite;\n}\n.loader[data-v-7d4b2c52]{\n    width: 100%;\n    height: calc(100vh / 2);\n}\n@-webkit-keyframes rotate-7d4b2c52{\n0%{transform: rotate(0deg);}\n100%{transform: rotate(360deg);}\n}\n@keyframes rotate-7d4b2c52{\n0%{transform: rotate(0deg);}\n100%{transform: rotate(360deg);}\n}\n", ""]);
 
 // exports
 
