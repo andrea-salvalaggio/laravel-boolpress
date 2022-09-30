@@ -22,10 +22,10 @@
 </template>
 
 <script>
-import PostCard from '../components/PostCard.vue';
+import axios from 'axios';
 import FooterComponent from '../components/FooterComponent.vue';
 import MainLoader from '../components/MainLoader.vue';
-import axios from 'axios';
+import PostCard from '../components/PostCard.vue';
 
 export default {
     name: 'HomePage',
