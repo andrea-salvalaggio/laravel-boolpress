@@ -8,7 +8,7 @@
                             <MainLoader/>
                         </div>
                         <div v-else class="posts-container">
-                            <h1 class="font-weight-bold">Posts</h1>
+                            <h2 class="font-weight-bold">Posts</h2>
                             <hr>
                             <PostCard v-for="post in posts" :key="post.id" :post="post" class="my-5"/>
                         </div>

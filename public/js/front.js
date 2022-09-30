@@ -2147,7 +2147,44 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony import */ var _components_PostCard_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/PostCard.vue */ "./resources/js/components/PostCard.vue");
+/* harmony import */ var _components_MainLoader_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/MainLoader.vue */ "./resources/js/components/MainLoader.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'TagPostsList',
+  components: {
+    PostCard: _components_PostCard_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    MainLoader: _components_MainLoader_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      tag: {
+        post: ''
+      },
+      isLoading: true
+    };
+  },
+  methods: {
+    getPost: function getPost() {
+      var _this = this;
+
+      var id = this.$route.params.id;
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/api/tags/".concat(id)).then(function (response) {
+        _this.tag = response.data.results.data;
+        _this.isLoading = false;
+      })["catch"](function (error) {
+        console.log("error");
+      });
+    }
+  },
+  created: function created() {
+    this.getPost();
+  }
+});
 
 /***/ }),
 
@@ -2602,7 +2639,7 @@ var render = function render() {
     staticClass: "loader"
   }, [_c("MainLoader")], 1) : _c("div", {
     staticClass: "posts-container"
-  }, [_c("h1", {
+  }, [_c("h2", {
     staticClass: "font-weight-bold"
   }, [_vm._v("Posts")]), _vm._v(" "), _c("hr"), _vm._v(" "), _vm._l(_vm.posts, function (post) {
     return _c("PostCard", {
@@ -2636,12 +2673,14 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("main", [_c("div", {
+  return _c("main", {
     staticClass: "container"
   }, [_c("div", {
     staticClass: "row justify-content-center"
+  }, [_c("div", {
+    staticClass: "col-12"
   }, [_vm.isLoading ? _c("MainLoader") : _c("div", {
-    staticClass: "col-6 mt-5"
+    staticClass: "mt-5"
   }, [_c("PostCard", {
     key: _vm.post.id,
     staticClass: "my-5",
@@ -2672,7 +2711,27 @@ var render = function render() {
   var _vm = this,
       _c = _vm._self._c;
 
-  return _c("div");
+  return _c("main", {
+    staticClass: "container"
+  }, [_c("div", {
+    staticClass: "row justify-content-center"
+  }, [_c("div", {
+    staticClass: "col-6 mt-5"
+  }, [_vm.isLoading ? _c("div", {
+    staticClass: "loader"
+  }, [_c("MainLoader")], 1) : _c("div", {
+    staticClass: "posts-container"
+  }, [_c("h2", {
+    staticClass: "font-weight-bold"
+  }, [_vm._v("Tag ")]), _vm._v(" "), _c("hr"), _vm._v(" "), _vm._l(_vm.tag.posts, function (post) {
+    return _c("PostCard", {
+      key: post.id,
+      staticClass: "my-5",
+      attrs: {
+        post: post
+      }
+    });
+  })], 2)]), _vm._v("å\n    ")])]);
 };
 
 var staticRenderFns = [];

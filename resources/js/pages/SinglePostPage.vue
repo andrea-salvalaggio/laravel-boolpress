@@ -1,9 +1,9 @@
 <template>
-    <main>
-        <div class="container">
-            <div class="row justify-content-center">
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
                 <MainLoader v-if="isLoading"/>
-                <div v-else class="col-6 mt-5">
+                <div v-else class="mt-5">
                     <PostCard :key="post.id" :post="post" class="my-5"/>
                 </div>
             </div>
