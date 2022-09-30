@@ -9,7 +9,7 @@
                     <h1 class="font-weight-bold">Available tags:</h1>
                     <hr>
                     <div class="tags-element">
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center mt-5">
                             <StandardCard v-for="tag in tags" :key="tag.id" :cardElement="tag" class="m-2"/>
                         </div>
                     </div>
