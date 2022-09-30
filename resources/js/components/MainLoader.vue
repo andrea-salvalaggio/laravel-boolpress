@@ -16,8 +16,8 @@ export default {
         height: 140px;
         border-radius: 50%;
         border: 15px solid transparent;
-        border-top: 15px solid rgb(0, 13, 255);
-        border-bottom: 15px solid rgb(0, 13, 255);
+        border-top: 15px solid #0000aa;
+        border-bottom: 15px solid #0000aa;
         animation: rotate 1s linear infinite;
     }
 
