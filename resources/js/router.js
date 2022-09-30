@@ -6,7 +6,7 @@ import AboutPage from './pages/AboutPage';
 import ContactsPage from './pages/ContactsPage';
 import SinglePostPage from './pages/SinglePostPage';
 
-export default new VueRouter({
+const router = new VueRouter({
     mode: 'history',
     routes: [
         {
@@ -30,4 +30,6 @@ export default new VueRouter({
             component: SinglePostPage
         }
     ]
-})
+});
+
+export default router

@@ -2192,11 +2192,11 @@ var render = function render() {
   return _c("nav", {
     staticClass: "navbar navbar-expand-lg navbar-light bg-light container my-3"
   }, [_c("router-link", {
-    staticClass: "navbar-brand font-weight-bold",
+    staticClass: "navbar-brand font-weight-bold text-uppercase",
     attrs: {
       to: "/home"
     }
-  }, [_vm._v("BOOLPRESS")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
+  }, [_vm._v("Boolpress")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "collapse navbar-collapse mx-2",
     attrs: {
       id: "navbarNav"
@@ -19221,7 +19221,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   mode: 'history',
   routes: [{
     path: '/home',
@@ -19240,7 +19240,8 @@ __webpack_require__.r(__webpack_exports__);
     name: 'singlePost',
     component: _pages_SinglePostPage__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
-}));
+});
+/* harmony default export */ __webpack_exports__["default"] = (router);
 
 /***/ }),
 

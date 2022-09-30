@@ -7,7 +7,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
+
+    <!-- Custom title -->
+    <title>Laravel | Boolpress</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/front.js') }}" defer></script>
