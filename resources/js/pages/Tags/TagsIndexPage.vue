@@ -5,25 +5,38 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     name: 'TagsIndexPage',
 
     data: function(){
         return{
             tags: [],
-            isLoading: true 
+            currentPage: 1,
+            lastPage: null,
+            isLoading: true
         }
     },
 
     methods:{
-        getTags(){
-
-        }
+        getTags(tagsPage = 1){
+            axios.get("/api/tags", {
+                page: tagsPage
+            }).then((response) => {
+                console.warn(response.data.results.data)
+                // this.posts = response.data.results.data;
+                // this.currentPage = response.data.results.current_page;
+                // this.lastPage = response.data.results.last_page;
+                // this.isLoading = false;
+            }).catch((error) => {
+                console.log("error");
+            });
+        },
     },
 
     created(){
         this.getTags();
-        console.warn('Tags');
     },
 
 }
