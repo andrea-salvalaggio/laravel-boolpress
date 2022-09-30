@@ -2445,8 +2445,19 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "standard-card"
-  }, [_c("h3", [_vm._v("\n        " + _vm._s(_vm.cardElement.name) + "\n    ")])]);
+    staticClass: "col-2 text-center card p-0"
+  }, [_c("h5", {
+    staticClass: "card-header"
+  }, [_vm._v("Tag # " + _vm._s(_vm.cardElement.id))]), _vm._v(" "), _c("div", {
+    staticClass: "card-body"
+  }, [_c("h5", {
+    staticClass: "card-title"
+  }, [_vm._v(_vm._s(_vm.cardElement.name))]), _vm._v(" "), _c("a", {
+    staticClass: "btn btn-primary",
+    attrs: {
+      href: "#"
+    }
+  }, [_vm._v("View post")])])]);
 };
 
 var staticRenderFns = [];
@@ -2653,22 +2664,26 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "row justify-content-center"
   }, [_c("div", {
-    staticClass: "col-6 mt-5"
+    staticClass: "col-12 mt-5"
   }, [_vm.isLoading ? _c("div", {
     staticClass: "loader"
   }, [_c("MainLoader")], 1) : _c("div", {
     staticClass: "tags-container"
   }, [_c("h1", {
     staticClass: "font-weight-bold"
-  }, [_vm._v("Available tags:")]), _vm._v(" "), _c("hr"), _vm._v(" "), _vm._l(_vm.tags, function (tag) {
+  }, [_vm._v("Available tags:")]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+    staticClass: "tags-element"
+  }, [_c("div", {
+    staticClass: "row justify-content-center"
+  }, _vm._l(_vm.tags, function (tag) {
     return _c("StandardCard", {
       key: tag.id,
-      staticClass: "my-5",
+      staticClass: "m-2",
       attrs: {
         cardElement: tag
       }
     });
-  })], 2)])]), _vm._v(">\n")]);
+  }), 1)])])])]), _vm._v(">\n")]);
 };
 
 var staticRenderFns = [];

@@ -1,14 +1,18 @@
 <template>
     <main class="container">
         <div class="row justify-content-center">
-            <div class="col-6 mt-5">
+            <div class="col-12 mt-5">
                 <div v-if="isLoading" class="loader">
                     <MainLoader/>
                 </div>
                 <div v-else class="tags-container">
                     <h1 class="font-weight-bold">Available tags:</h1>
                     <hr>
-                    <StandardCard v-for="tag in tags" :key="tag.id" :cardElement="tag" class="my-5"/>
+                    <div class="tags-element">
+                        <div class="row justify-content-center">
+                            <StandardCard v-for="tag in tags" :key="tag.id" :cardElement="tag" class="m-2"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>>
