@@ -2502,12 +2502,12 @@ var render = function render() {
     staticClass: "card-body"
   }, [_c("h5", {
     staticClass: "card-title"
-  }, [_vm._v(_vm._s(_vm.cardElement.name))]), _vm._v(" "), _c("a", {
+  }, [_vm._v(_vm._s(_vm.cardElement.name))]), _vm._v(" "), _c("router-link", {
     staticClass: "btn btn-primary",
     attrs: {
-      href: "#"
+      to: "tags/" + _vm.cardElement.id
     }
-  }, [_vm._v("View post")])])]);
+  }, [_vm._v("View post")])], 1)]);
 };
 
 var staticRenderFns = [];
@@ -2723,7 +2723,7 @@ var render = function render() {
     staticClass: "posts-container"
   }, [_c("h2", {
     staticClass: "font-weight-bold"
-  }, [_vm._v("Tag ")]), _vm._v(" "), _c("hr"), _vm._v(" "), _vm._l(_vm.tag.posts, function (post) {
+  }, [_vm._v("Tag: #" + _vm._s(_vm.tag.name))]), _vm._v(" "), _c("hr"), _vm._v(" "), _vm._l(_vm.tag.posts, function (post) {
     return _c("PostCard", {
       key: post.id,
       staticClass: "my-5",
@@ -2731,7 +2731,7 @@ var render = function render() {
         post: post
       }
     });
-  })], 2)]), _vm._v("å\n    ")])]);
+  })], 2)])])]);
 };
 
 var staticRenderFns = [];
@@ -2779,7 +2779,7 @@ var render = function render() {
         cardElement: tag
       }
     });
-  }), 1)])])])]), _vm._v(">\n")]);
+  }), 1)])])])])]);
 };
 
 var staticRenderFns = [];

@@ -3,7 +3,7 @@
         <h5 class="card-header">Tag # {{ cardElement.id }}</h5>
         <div class="card-body">
             <h5 class="card-title">{{ cardElement.name }}</h5>
-            <a href="#" class="btn btn-primary">View post</a>
+            <router-link :to="'tags/' + cardElement.id " class="btn btn-primary">View post</router-link>
         </div>
     </div>
 </template>

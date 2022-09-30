@@ -6,11 +6,11 @@
                     <MainLoader/>
                 </div>
                 <div v-else class="posts-container">
-                    <h2 class="font-weight-bold">Tag </h2>
+                    <h2 class="font-weight-bold">Tag: #{{ tag.name }}</h2>
                     <hr>
                     <PostCard v-for="post in tag.posts" :key="post.id" :post="post" class="my-5"/>
                 </div>
-            </div>å
+            </div>
         </div>
     </main>
 </template>
