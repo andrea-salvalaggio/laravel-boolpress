@@ -6,7 +6,26 @@
 
 <script>
 export default {
-    name: 'TagsIndexPage'
+    name: 'TagsIndexPage',
+
+    data: function(){
+        return{
+            tags: [],
+            isLoading: true 
+        }
+    },
+
+    methods:{
+        getTags(){
+
+        }
+    },
+
+    created(){
+        this.getTags();
+        console.warn('Tags');
+    },
+
 }
 </script>
 

@@ -2130,7 +2130,20 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'TagsIndexPage'
+  name: 'TagsIndexPage',
+  data: function data() {
+    return {
+      tags: [],
+      isLoading: true
+    };
+  },
+  methods: {
+    getTags: function getTags() {}
+  },
+  created: function created() {
+    this.getTags();
+    console.warn('Tags');
+  }
 });
 
 /***/ }),
