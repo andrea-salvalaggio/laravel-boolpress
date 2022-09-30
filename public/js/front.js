@@ -2498,7 +2498,7 @@ var render = function render() {
     staticClass: "col-2 text-center card p-0"
   }, [_c("h5", {
     staticClass: "card-header"
-  }, [_vm._v("Tag # " + _vm._s(_vm.cardElement.id))]), _vm._v(" "), _c("div", {
+  }, [_vm._v("Tag #" + _vm._s(_vm.cardElement.id))]), _vm._v(" "), _c("div", {
     staticClass: "card-body"
   }, [_c("h5", {
     staticClass: "card-title"
