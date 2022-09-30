@@ -2144,14 +2144,16 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getTags: function getTags() {
+      var _this = this;
+
       var tagsPage = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("/api/tags", {
         page: tagsPage
       }).then(function (response) {
-        console.warn(response.data.results.data); // this.posts = response.data.results.data;
-        // this.currentPage = response.data.results.current_page;
-        // this.lastPage = response.data.results.last_page;
-        // this.isLoading = false;
+        _this.tags = response.data.results.data;
+        _this.currentPage = response.data.results.current_page;
+        _this.lastPage = response.data.results.last_page;
+        _this.isLoading = false;
       })["catch"](function (error) {
         console.log("error");
       });

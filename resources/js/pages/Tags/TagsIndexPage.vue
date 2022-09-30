@@ -24,11 +24,10 @@ export default {
             axios.get("/api/tags", {
                 page: tagsPage
             }).then((response) => {
-                console.warn(response.data.results.data)
-                // this.posts = response.data.results.data;
-                // this.currentPage = response.data.results.current_page;
-                // this.lastPage = response.data.results.last_page;
-                // this.isLoading = false;
+                this.tags = response.data.results.data;
+                this.currentPage = response.data.results.current_page;
+                this.lastPage = response.data.results.last_page;
+                this.isLoading = false;
             }).catch((error) => {
                 console.log("error");
             });
