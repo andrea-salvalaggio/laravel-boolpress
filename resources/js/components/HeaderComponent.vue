@@ -15,6 +15,9 @@
                 <li class="nav-item">
                     <router-link class="nav-link" to="/contacts">Contacts</router-link>
                 </li>
+                <li class="nav-item">
+                    <router-link class="nav-link" to="/tags">Tags</router-link>
+                </li>
                 <li class="nav-item ml-auto">
                     <a class="btn btn-outline-primary" href="/admin">Login</a>
                 </li>
