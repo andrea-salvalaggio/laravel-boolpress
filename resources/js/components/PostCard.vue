@@ -11,19 +11,19 @@
             <div class="d-flex">
                 <h5 class="font-weight-bold">Tags: </h5>
                 <!-- Add tags in PostCard -->
-                <TagPost v-for="tag in post.tags" :key="tag.id" :tag="tag"/>
+                <TagPostIndex v-for="tag in post.tags" :key="tag.id" :tag="tag"/>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import TagPost from './TagPost.vue';
+import TagPostIndex from './TagPostIndex.vue';
 
 export default {
 
     components: {
-        TagPost,
+        TagPostIndex
     },
 
     props: {
